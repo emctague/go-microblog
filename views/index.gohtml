@@ -1,0 +1,12 @@
+{{template "header" "Index"}}
+{{range reverse .}}
+    <a href="{{ permalink . }}" class="article-link">
+        <article>
+            <header>
+                <h1>{{ .Title }}</h1>
+                <time datetime="{{ .Created }}">{{ prettyDate . }}</time>
+            </header>
+        </article>
+    </a>
+{{end}}
+{{template "footer"}}

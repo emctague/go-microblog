@@ -1,0 +1,11 @@
+{{template "header" .Title }}
+<article>
+    <header>
+        <h1>{{ .Title }}</h1>
+        <time datetime="{{ .Created }}">{{ prettyDate . }}</time>
+    </header>
+    <section class="body">
+        {{ .Body }}
+    </section>
+</article>
+{{template "footer"}}
