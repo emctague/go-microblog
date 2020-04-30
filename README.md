@@ -1,5 +1,8 @@
 # go-microblog
 
+<small>[demo of default source code](https://go-microblog-demo.herokuapp.com/)
+</small>
+
 This is a small, extremely simple platform for blogging via go.
 
 Similarly to Jekyll, you author markdown files with YAML front matter in order to create posts.
@@ -80,7 +83,8 @@ variables. The command-line flag takes precedence over the environment variable 
 
 |Command-Line Flag|Environment Variable|Default|Description|
 |---|---|---|---|
-|listen|LISTEN|0.0.0.0:8080|The IP and port the server listens on.|
+|ip|IP|0.0.0.0|The IP the server listens on.|
+|port|PORT|8080|The port the server listens on.|
 |viewDir|VIEW_DIR|./views|The directory from which views (theme files) are read.|
 |articleDir|ARTICLE_DIR|./articles|The directory from which articles are read.|
 |staticDir|STATIC_DIR|./static|The directory from which static files are read.|

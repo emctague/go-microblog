@@ -24,7 +24,8 @@ func EnvFlagOrDefaultString(flagName string, envName string, desc string, def st
 
 func main() {
 	// Obtain configuration strings
-	listen := EnvFlagOrDefaultString("listen", "LISTEN", "The IP and port to listen on", "0.0.0.0:8080")
+	ip := EnvFlagOrDefaultString("ip", "IP", "The IP to listen on", "0.0.0.0")
+	port := EnvFlagOrDefaultString("port", "PORT", "The port to listen on", "8080")
 	viewDir := EnvFlagOrDefaultString("viewDir", "VIEW_DIR", "The directory that view (.gohtml) files are found in", "./views")
 	articleDir := EnvFlagOrDefaultString("articleDir", "ARTICLE_DIR", "The directory that article (.md) files are found in", "./articles")
 	staticDir := EnvFlagOrDefaultString("staticDir", "STATIC_DIR", "The directory from which static files are served", "./static")
@@ -46,5 +47,5 @@ func main() {
 	r.HandleFunc("/", b.GetPostList)
 	r.HandleFunc("/{year}/{month}/{day}/{permaTitle}", b.GetPost)
 
-	log.Fatal(http.ListenAndServe(*listen, r))
+	log.Fatal(http.ListenAndServe(*ip+":"+*port, r))
 }
