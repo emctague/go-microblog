@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gopkg.in/russross/blackfriday.v2"
+	"github.com/russross/blackfriday/v2"
 	"html/template"
 	"os"
 	"strconv"
